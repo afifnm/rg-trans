@@ -68,7 +68,9 @@
           <div class="menu-inner-shadow"></div>
 
           <ul class="menu-inner py-1">
-          
+          <?php 
+		$url= explode("/", parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)); 
+	?>
             <!-- Dashboard -->
             <li class="menu-item active">
               <a href="admin.php" class="menu-link">
@@ -89,7 +91,7 @@
               </a>
 
               <ul class="menu-sub">
-                <li class="menu-item">
+                <li class="menu-item <?php if($url[3]=="ds_motor.php"){ echo "active"; } ?> ">
                   <a href="ds_motor.php" class="menu-link">
                     <div data-i18n="Without menu">Sewa motor</div>
                   </a>
